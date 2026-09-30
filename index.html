@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aryan Breweries — Craft Coffee, Elevated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%231a0f0a' stroke='%23d4a853'/%3E%3Cellipse cx='16' cy='17' rx='6' ry='9' fill='%232c1810' stroke='%23d4a853'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Brand logo sprite -->
+  <svg class="brand-sprite" aria-hidden="true">
+    <defs>
+      <linearGradient id="logo-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f5e6c4" />
+        <stop offset="45%" stop-color="#d4a853" />
+        <stop offset="100%" stop-color="#9a7332" />
+      </linearGradient>
+      <linearGradient id="logo-bean" x1="20%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%" stop-color="#6b4423" />
+        <stop offset="100%" stop-color="#1a0f0a" />
+      </linearGradient>
+      <radialGradient id="logo-glow" cx="50%" cy="55%" r="50%">
+        <stop offset="0%" stop-color="#d4a853" stop-opacity="0.35" />
+        <stop offset="100%" stop-color="#d4a853" stop-opacity="0" />
+      </radialGradient>
+      <symbol id="brand-logo" viewBox="0 0 120 120">
+        <circle cx="60" cy="62" r="54" fill="url(#logo-glow)" />
+        <circle cx="60" cy="60" r="56" fill="none" stroke="url(#logo-gold)" stroke-width="1" opacity="0.25" />
+        <path d="M60 10 A50 50 0 0 1 106 52" fill="none" stroke="url(#logo-gold)" stroke-width="2.2" stroke-linecap="round" />
+        <path d="M14 68 A50 50 0 0 1 52 110" fill="none" stroke="url(#logo-gold)" stroke-width="1.2" stroke-linecap="round" opacity="0.45" />
+        <path class="logo-steam" d="M48 24 Q43 14 47 5" fill="none" stroke="url(#logo-gold)" stroke-width="2" stroke-linecap="round" />
+        <path class="logo-steam logo-steam--2" d="M60 19 Q57 8 61 1" fill="none" stroke="url(#logo-gold)" stroke-width="2.4" stroke-linecap="round" />
+        <path class="logo-steam logo-steam--3" d="M72 24 Q77 14 73 5" fill="none" stroke="url(#logo-gold)" stroke-width="2" stroke-linecap="round" />
+        <path d="M60 30 C44 38 40 58 44 76 C47 90 53 95 60 95 C67 95 73 90 76 76 C80 58 76 38 60 30 Z" fill="url(#logo-bean)" stroke="url(#logo-gold)" stroke-width="1.2" />
+        <path d="M60 34 Q55 58 60 88" fill="none" stroke="url(#logo-gold)" stroke-width="1.3" opacity="0.55" />
+        <circle cx="52" cy="52" r="2" fill="#f5e6c4" opacity="0.35" />
+        <text x="60" y="67" text-anchor="middle" dominant-baseline="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="27" font-weight="700" fill="url(#logo-gold)">AB</text>
+      </symbol>
+    </defs>
+  </svg>
+  <!-- Intro Video Overlay -->
+  <div id="intro-overlay" class="intro-overlay">
+    <video id="intro-video" class="intro-video" autoplay muted playsinline poster="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1600&q=80">
+      <source src="https://assets.mixkit.co/videos/43940/43940-720.mp4" type="video/mp4" />
+    </video>
+    <div class="intro-gradient"></div>
+    <div class="intro-content">
+      <div class="brand-lockup brand-lockup--intro">
+        <svg class="brand-logo brand-logo--intro" aria-hidden="true"><use href="#brand-logo" /></svg>
+        <div class="brand-wordmark brand-wordmark--intro">
+          <span class="brand-name">Aryan</span>
+          <span class="brand-sub">Breweries</span>
+          <span class="brand-est">Est. 2024 · Noble Craft</span>
+        </div>
+      </div>
+      <p class="intro-hook">The cup you'll crave<br /><em>before you even wake up.</em></p>
+      <p class="intro-tagline">Small-batch · Single-origin · Unforgettable</p>
+      <div class="intro-progress">
+        <div class="intro-progress-bar" id="progress-bar"></div>
+      </div>
+      <button class="intro-skip" id="skip-btn">Taste the Difference →</button>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <a href="#" class="nav-logo brand-lockup brand-lockup--nav">
+      <svg class="brand-logo brand-logo--nav" aria-hidden="true"><use href="#brand-logo" /></svg>
+      <div class="brand-wordmark brand-wordmark--nav">
+        <span class="brand-name">Aryan</span>
+        <span class="brand-sub">Breweries</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#coffees">Collection</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <button class="nav-cta">Get Yours</button>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=80">
+        <source src="https://assets.mixkit.co/videos/43938/43938-720.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <svg class="brand-logo brand-logo--hero" aria-hidden="true"><use href="#brand-logo" /></svg>
+      <span class="hero-badge">Award-Winning · Roasted Daily · Irresistibly Bold</span>
+      <h1 class="hero-title">
+        Crafted with<br />
+        <em>Passion & Precision</em>
+      </h1>
+      <p class="hero-desc">
+        At Aryan Breweries, we roast exceptional beans from the world's finest
+        highlands — delivering bold flavors, silky textures, and unforgettable aroma
+        in every pour.
+      </p>
+      <div class="hero-actions">
+        <a href="#coffees" class="btn btn-primary">Explore Our Coffees</a>
+        <a href="#story-video" class="btn btn-outline">Watch Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- Story Section -->
+  <section id="story" class="section story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-visual">
+          <div class="story-image-wrap">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Coffee beans" />
+            <div class="story-accent"></div>
+          </div>
+        </div>
+        <div class="story-text">
+          <span class="section-label">Our Story</span>
+          <h2>Born from a love of<br />the perfect brew</h2>
+          <p>
+            Aryan Breweries began with a simple belief: coffee should be an
+            experience, not just a drink. Named after the Sanskrit word for
+            "noble," we source ethically from small farms across Ethiopia,
+            Colombia, and India — roasting in small batches to unlock each bean's
+            unique character.
+          </p>
+          <p>
+            From our roastery to your cup, every step is guided by craftsmanship,
+            sustainability, and an unwavering commitment to quality.
+          </p>
+          <div class="story-stats">
+            <div class="stat">
+              <span class="stat-num">12+</span>
+              <span class="stat-label">Origin Countries</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">48hr</span>
+              <span class="stat-label">Fresh Roast Guarantee</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Direct Trade</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intro / Story Video -->
+      <div id="story-video" class="story-video-block">
+        <div class="story-video-wrap">
+          <video id="story-video-player" class="story-video" playsinline poster="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&q=80">
+            <source src="https://assets.mixkit.co/videos/43939/43939-720.mp4" type="video/mp4" />
+          </video>
+          <div class="story-video-overlay" id="story-video-overlay">
+            <button class="story-video-play" id="story-play-btn" aria-label="Play our story video">
+              <span class="play-icon">▶</span>
+              <span class="play-text">Watch Our Story</span>
+            </button>
+          </div>
+        </div>
+        <div class="story-video-caption">
+          <span class="section-label">Intro Film</span>
+          <h3>From origin to your first sip</h3>
+          <p>A 60-second journey through sourcing, roasting, and the ritual of the perfect pour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffee Collection -->
+  <section id="coffees" class="section coffees">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Collection</span>
+        <h2>Signature Roasts</h2>
+        <p>Each blend tells a story of origin, altitude, and artful roasting.</p>
+      </div>
+
+      <div class="coffee-grid">
+        <!-- Coffee 1 -->
+        <article class="coffee-card" data-origin="Ethiopia">
+          <div class="coffee-image">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&q=80" alt="Himalayan Dawn" />
+            <span class="coffee-roast roast-light">Light Roast</span>
+          </div>
+          <div class="coffee-body">
+            <h3>Himalayan Dawn</h3>
+            <p class="coffee-origin">Yirgacheffe, Ethiopia · 1,800m</p>
+            <p class="coffee-desc">
+              A bright, floral cup with notes of jasmine, bergamot, and wild honey.
+              Washed process beans deliver a tea-like clarity with a silky, lemon-zest
+              finish that lingers gracefully on the palate.
+            </p>
+            <div class="coffee-desc-photos">
+              <img src="https://images.unsplash.com/photo-1524350876685-274059332603?w=300&q=80" alt="Ethiopian coffee cherries on branch" />
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&q=80" alt="Light roast Ethiopian beans" />
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300&q=80" alt="Pour-over brew with floral notes" />
+            </div>
+            <div class="coffee-notes">
+              <span>Jasmine</span>
+              <span>Bergamot</span>
+              <span>Honey</span>
+            </div>
+            <div class="coffee-footer">
+              <span class="coffee-price">$18 / 250g</span>
+              <button class="btn btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coffee 2 -->
+        <article class="coffee-card featured" data-origin="Colombia">
+          <div class="coffee-badge">Best Seller</div>
+          <div class="coffee-image">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80" alt="Aryan Reserve" />
+            <span class="coffee-roast roast-medium">Medium Roast</span>
+          </div>
+          <div class="coffee-body">
+            <h3>Aryan Reserve</h3>
+            <p class="coffee-origin">Huila, Colombia · 1,650m</p>
+            <p class="coffee-desc">
+              Our flagship blend — rich chocolate undertones layered with caramel
+              sweetness and a hint of red apple. Sun-dried on raised beds, this
+              medium roast balances body and brightness for the perfect everyday cup.
+            </p>
+            <div class="coffee-desc-photos">
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300&q=80" alt="Colombian coffee farm hillside" />
+              <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=300&q=80" alt="Medium roast beans in drum" />
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80" alt="Latte art in ceramic cup" />
+            </div>
+            <div class="coffee-notes">
+              <span>Dark Chocolate</span>
+              <span>Caramel</span>
+              <span>Red Apple</span>
+            </div>
+            <div class="coffee-footer">
+              <span class="coffee-price">$22 / 250g</span>
+              <button class="btn btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coffee 3 -->
+        <article class="coffee-card" data-origin="India">
+          <div class="coffee-image">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Monsoon Malabar" />
+            <span class="coffee-roast roast-dark">Dark Roast</span>
+          </div>
+          <div class="coffee-body">
+            <h3>Monsoon Malabar</h3>
+            <p class="coffee-origin">Chikmagalur, India · 1,200m</p>
+            <p class="coffee-desc">
+              A uniquely Indian process — beans exposed to monsoon winds for weeks,
+              creating a low-acid, full-bodied profile. Expect earthy spice, toasted
+              nuts, and a smoky finish reminiscent of aged whiskey.
+            </p>
+            <div class="coffee-desc-photos">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&q=80" alt="Monsoon Malabar drying beds" />
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&q=80" alt="Dark roasted Malabar beans" />
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=300&q=80" alt="French press with full-bodied brew" />
+            </div>
+            <div class="coffee-notes">
+              <span>Spice</span>
+              <span>Toasted Nuts</span>
+              <span>Smoky</span>
+            </div>
+            <div class="coffee-footer">
+              <span class="coffee-price">$20 / 250g</span>
+              <button class="btn btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coffee 4 -->
+        <article class="coffee-card" data-origin="Kenya">
+          <div class="coffee-image">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&q=80" alt="Savanna Gold" />
+            <span class="coffee-roast roast-light">Light-Medium</span>
+          </div>
+          <div class="coffee-body">
+            <h3>Savanna Gold</h3>
+            <p class="coffee-origin">Nyeri, Kenya · 1,900m</p>
+            <p class="coffee-desc">
+              Vibrant and wine-like with blackcurrant, grapefruit, and brown sugar
+              sweetness. Double-washed AA grade beans produce a juicy, complex cup
+              that shines as pour-over or cold brew.
+            </p>
+            <div class="coffee-desc-photos">
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&q=80" alt="Kenyan highland coffee cherries" />
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300&q=80" alt="AA grade washed Kenyan beans" />
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&q=80" alt="Cold brew with citrus brightness" />
+            </div>
+            <div class="coffee-notes">
+              <span>Blackcurrant</span>
+              <span>Grapefruit</span>
+              <span>Brown Sugar</span>
+            </div>
+            <div class="coffee-footer">
+              <span class="coffee-price">$24 / 250g</span>
+              <button class="btn btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coffee 5 -->
+        <article class="coffee-card" data-origin="Brazil">
+          <div class="coffee-image">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80" alt="Velvet Espresso" />
+            <span class="coffee-roast roast-dark">Espresso Roast</span>
+          </div>
+          <div class="coffee-body">
+            <h3>Velvet Espresso</h3>
+            <p class="coffee-origin">Minas Gerais, Brazil · 1,100m</p>
+            <p class="coffee-desc">
+              Engineered for espresso perfection — dense crema, velvety mouthfeel,
+              and notes of hazelnut, cocoa nib, and dried fig. Natural process
+              Yellow Bourbon creates a sweet, forgiving shot that pairs beautifully
+              with milk.
+            </p>
+            <div class="coffee-desc-photos">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300&q=80" alt="Brazilian Yellow Bourbon cherries" />
+              <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=300&q=80" alt="Espresso roast profile beans" />
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80" alt="Espresso shot with rich crema" />
+            </div>
+            <div class="coffee-notes">
+              <span>Hazelnut</span>
+              <span>Cocoa</span>
+              <span>Dried Fig</span>
+            </div>
+            <div class="coffee-footer">
+              <span class="coffee-price">$19 / 250g</span>
+              <button class="btn btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Coffee 6 -->
+        <article class="coffee-card" data-origin="Guatemala">
+          <div class="coffee-image">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Volcano Ember" />
+            <span class="coffee-roast roast-medium">Medium-Dark</span>
+          </div>
+          <div class="coffee-body">
+            <h3>Volcano Ember</h3>
+            <p class="coffee-origin">Antigua, Guatemala · 1,550m</p>
+            <p class="coffee-desc">
+              Grown in volcanic soil at the foot of three volcanoes, this cup
+              delivers deep molasses, orange peel, and a warm cinnamon spice.
+              A comforting, complex roast ideal for French press mornings.
+            </p>
+            <div class="coffee-desc-photos">
+              <img src="https://images.unsplash.com/photo-1524350876685-274059332603?w=300&q=80" alt="Guatemalan volcanic coffee farm" />
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&q=80" alt="Antigua medium-dark roast" />
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&q=80" alt="French press morning brew" />
+            </div>
+            <div class="coffee-notes">
+              <span>Molasses</span>
+              <span>Orange Peel</span>
+              <span>Cinnamon</span>
+            </div>
+            <div class="coffee-footer">
+              <span class="coffee-price">$21 / 250g</span>
+              <button class="btn btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="section process">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-label">The Craft</span>
+        <h2>From Bean to Brew</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-image">
+            <img src="https://images.unsplash.com/photo-1524350876685-274059332603?w=400&q=80" alt="Coffee cherries at origin farm" />
+          </div>
+          <div class="step-num">01</div>
+          <h3>Source</h3>
+          <p>Direct relationships with farmers across 12 origin countries, paying above fair-trade prices.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-image">
+            <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=400&q=80" alt="Small-batch coffee roasting" />
+          </div>
+          <div class="step-num">02</div>
+          <h3>Roast</h3>
+          <p>Small-batch roasting on a Probat P12, profiled for each origin's unique characteristics.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-image">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80" alt="Freshly roasted beans degassing" />
+          </div>
+          <div class="step-num">03</div>
+          <h3>Rest</h3>
+          <p>48-hour degassing period ensures peak flavor extraction when you brew at home.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-image">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&q=80" alt="Packaged coffee ready for delivery" />
+          </div>
+          <div class="step-num">04</div>
+          <h3>Deliver</h3>
+          <p>Shipped in valve-sealed bags within 72 hours of roasting — freshness guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section id="visit" class="section visit">
+    <div class="container">
+      <div class="visit-card">
+        <div class="visit-content">
+          <span class="section-label">Visit Us</span>
+          <h2>Experience Aryan Breweries</h2>
+          <p>
+            Step into our roastery café for cupping sessions, brewing workshops,
+            and the aroma of freshly roasted beans. Open daily from 7 AM.
+          </p>
+          <address>
+            42 Roast Lane, Artisan District<br />
+            Mumbai, Maharashtra 400001<br />
+            hello@aryanbreweries.com
+          </address>
+          <a href="#" class="btn btn-primary">Book a Tasting</a>
+        </div>
+        <div class="visit-map">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Aryan Breweries café interior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand brand-lockup brand-lockup--footer">
+        <svg class="brand-logo brand-logo--footer" aria-hidden="true"><use href="#brand-logo" /></svg>
+        <div class="brand-wordmark brand-wordmark--footer">
+          <span class="brand-name">Aryan</span>
+          <span class="brand-sub">Breweries</span>
+          <p class="brand-promise">One sip changes everything.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Shop</a>
+        <a href="#">Wholesale</a>
+        <a href="#">Careers</a>
+      </div>
+      <p class="footer-copy">&copy; 2024 Aryan Breweries. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
